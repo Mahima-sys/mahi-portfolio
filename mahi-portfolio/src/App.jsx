@@ -2,24 +2,49 @@
 import './App.css'
 
 
+
 const projects = [
   {
     title: 'Enterprise AI Employee Assistant',
     category: 'Generative AI • React • FastAPI • Python',
     description:
-      'An AI-powered employee assistant designed to help IT teams access information and streamline workplace tasks. Built with a React frontend and FastAPI backend, with LLM integration planned for intelligent responses.',
+      'An AI-powered assistant designed to help employees find information and streamline everyday workplace tasks.',
+    features: [
+      'Interactive chat interface',
+      'React frontend with FastAPI backend',
+      'LLM integration for intelligent responses',
+    ],
+    contribution:
+      'Designed the application structure and developed the frontend and backend integration.',
+    github: 'https://github.com/Mahima-sys',
   },
   {
     title: 'AI Resume Screening System',
     category: 'AI • Python • Flask • MySQL',
     description:
-      'An AI-assisted recruitment application that compares resumes with job descriptions, calculates matching scores, and identifies matched and missing skills.',
+      'An AI-assisted recruitment application that compares resumes against job descriptions and identifies relevant skills.',
+    features: [
+      'Resume and job description upload',
+      'Resume matching score',
+      'Matched and missing skills analysis',
+    ],
+    contribution:
+      'Worked on resume processing, matching logic, and the application workflow.',
+    github: 'https://github.com/Mahima-sys/AI-Resume-Screening-System',
   },
   {
     title: 'Real-Time Sign Language Translator',
     category: 'Computer Vision • MediaPipe • Random Forest',
     description:
-      'A real-time hand-sign recognition application using MediaPipe and a machine learning model, with speech output to support communication.',
+      'A computer vision application that recognizes hand signs and supports communication through speech output.',
+    features: [
+      'Real-time hand landmark detection',
+      'Machine learning-based sign classification',
+      'Text-to-speech output',
+    ],
+    contribution:
+      'Worked on hand landmark processing, model training, and speech output integration.',
+    github: 'https://github.com/Mahima-sys/Real-Time-Sign-Language-Translator',
   },
 ]
 
@@ -83,13 +108,43 @@ function App() {
           <h2>Featured projects</h2>
           <div className="project-grid">
             {projects.map((project, index) => (
-              <article className="project-card" key={project.title}>
-                <p className="project-number">0{index + 1}</p>
-                <p className="project-category">{project.category}</p>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href="#contact">Ask me about this project ↗</a>
-              </article>
+             
+<article className="project-card" key={project.title}>
+  <p className="project-number">
+    0{index + 1}
+  </p>
+
+  <p className="project-category">
+    {project.category}
+  </p>
+
+  <h3>{project.title}</h3>
+
+  <p className="project-description">
+    {project.description}
+  </p>
+
+  <h4>Key Features</h4>
+  <ul className="project-features">
+    {project.features.map((feature) => (
+      <li key={feature}>{feature}</li>
+    ))}
+  </ul>
+
+  <p className="project-contribution">
+    <strong>My Contribution:</strong> {project.contribution}
+  </p>
+
+  <a
+    className="project-link"
+    href={project.github}
+    target="_blank"
+    rel="noreferrer"
+  >
+    View on GitHub ↗
+  </a>
+</article>
+
             ))}
           </div>
         </section>
