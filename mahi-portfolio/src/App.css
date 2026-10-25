@@ -1162,4 +1162,328 @@ a {
     transition-duration: .01ms !important;
   }
 }
+/* Project screenshot styling */
+.project-image {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  margin-bottom: 22px;
+  border: 1px solid #34364a;
+  transition: transform 0.3s ease;
+}
 
+.project-card:hover .project-image {
+  transform: scale(1.02);
+}
+
+.project-card {
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 650px) {
+  .project-image {
+    height: 190px;
+  }
+}
+/* Certificate gallery */
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.certificate-card {
+  overflow: hidden;
+  border: 1px solid #34364a;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #1b1c2b, #12131d);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  border-color: #a78bfa;
+}
+
+.certificate-image-wrap {
+  padding: 16px;
+  background: #f7f5fb;
+}
+
+.certificate-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.certificate-content {
+  padding: 22px;
+}
+
+.certificate-content h3 {
+  color: #f5f5ff;
+  font-size: 19px;
+  margin: 0 0 10px;
+}
+
+.certificate-content p {
+  color: #b8c0cc;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.certificate-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #c4b5fd;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.certificate-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 650px) {
+  .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-image {
+    height: 200px;
+  }
+}
+
+/* Internship and certificate section layout */
+#certificates {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  box-sizing: border-box;
+}
+
+/* Keep both sides aligned */
+#certificates .internship-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 36px;
+  align-items: start;
+}
+
+/* Certificate cards in an even grid */
+#certificates .certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Equal card sizing */
+#certificates .certificate-card {
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Consistent image area */
+#certificates .certificate-image-wrap {
+  width: 100%;
+  height: 230px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#certificates .certificate-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Consistent text spacing */
+#certificates .certificate-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  flex: 1;
+}
+
+#certificates .certificate-content h3,
+#certificates .certificate-content p {
+  margin: 0;
+}
+
+#certificates .certificate-link {
+  margin-top: auto;
+}
+
+/* Tablet and mobile */
+@media (max-width: 850px) {
+  #certificates .internship-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  #certificates {
+    padding: 48px 16px;
+  }
+
+  #certificates .certificate-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #certificates .certificate-image-wrap {
+    height: 240px;
+  }
+}
+/* Responsive internship and certificate layout */
+.career-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+}
+
+.internships-section,
+#certificates {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#certificates .certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+#certificates .certificate-card {
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#certificates .certificate-image-wrap {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+#certificates .certificate-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 850px) {
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  #certificates .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Align internship and certificate sections */
+.career-grid.section-divider {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  padding: 56px 24px;
+  box-sizing: border-box;
+}
+
+.career-grid .internships-section,
+.career-grid .certificates-section {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.career-grid .section-heading {
+  margin-top: 0;
+}
+
+.career-grid .certificates-section > .eyebrow {
+  margin-top: 0;
+  text-align: left;
+}
+
+.career-grid .certificates-section > h2 {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.career-grid .certificates-section > .section-text {
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.career-grid .certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.career-grid .certificate-card {
+  min-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.career-grid .certificate-image-wrap {
+  height: 180px;
+}
+
+.career-grid .certificate-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 850px) {
+  .career-grid.section-divider {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .career-grid .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-grid .certificate-image-wrap {
+    height: 240px;
+  }
+}

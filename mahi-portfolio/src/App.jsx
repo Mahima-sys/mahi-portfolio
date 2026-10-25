@@ -6,8 +6,10 @@ const projects = [
     number: '01',
     title: 'Credit Card Fraud Detection',
     category: 'MACHINE LEARNING',
+    image: '/cred1.jpeg',
     description:
       'A machine learning project to identify potentially fraudulent credit card transactions from transaction data.',
+      
     technologies: ['Python', 'Scikit-learn', 'Pandas'],
     github: 'https://github.com/Mahima-sys',
     icon: '◈',
@@ -16,6 +18,7 @@ const projects = [
     number: '02',
     title: 'Media Fabrication Detection',
     category: 'AI & DEEP LEARNING',
+    image: '/med1.jpeg',
     description:
       'A deep-learning project focused on identifying manipulated or fabricated media using neural-network techniques.',
     technologies: ['Python', 'Neural Networks', 'Deep Learning'],
@@ -26,6 +29,7 @@ const projects = [
     number: '03',
     title: 'AI Resume Screening System',
     category: 'AI & FULL STACK',
+      image: '/aires2.jpeg',
     description:
       'A recruitment application that compares resumes with job descriptions and identifies matching and missing skills.',
     technologies: ['Python', 'Flask', 'MySQL'],
@@ -36,6 +40,7 @@ const projects = [
     number: '04',
     title: 'Real-Time Sign Language Translator',
     category: 'COMPUTER VISION',
+     image: '/signlan1.jpeg',
     description:
       'A hand-sign recognition application using computer vision and machine learning, with text-to-speech output.',
     technologies: ['Python', 'MediaPipe', 'Machine Learning'],
@@ -46,6 +51,7 @@ const projects = [
     number: '05',
     title: 'Enterprise AI Employee Assistant',
     category: 'GENERATIVE AI',
+     image: '/entr1.jpeg',
     description:
       'An employee-assistance application with a React interface and FastAPI backend, designed for AI-powered workplace support.',
     technologies: ['React', 'FastAPI', 'Python'],
@@ -75,24 +81,28 @@ const internships = [
   {
     title: 'AI-ML Virtual Internship',
     organization: 'Amazon Web Services',
+    image: '/aiml.jpeg',
     detail: 'AWS SageMaker, S3, IAM',
     icon: '✧',
   },
   {
     title: 'Cyber Security Virtual Internship',
     organization: 'Palo Alto Networks',
+    image: '/cyb.jpeg',
     detail: 'Network security and threat detection',
     icon: '⬡',
   },
   {
     title: 'Zero Trust Cloud Security',
     organization: 'Virtual Internship',
+    image: '/zero.jpeg',
     detail: 'Zero Trust architecture and cloud security',
     icon: '⌑',
   },
   {
     title: 'Employability Skill Job Ready',
     organization: 'NSDC',
+    image: '/emp.jpeg',
     detail: 'Communication and collaboration',
     icon: '◎',
   },
@@ -132,6 +142,7 @@ function App() {
           <a href="#internships">Internships</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
+          <a href="#certificates">Certificates</a>
         </div>
 
         <div className="nav-socials">
@@ -314,14 +325,23 @@ function App() {
 
           <div className="project-grid">
             {projects.map((project) => (
-              <article className="project-card" key={project.number}>
-                <div className="project-card-top">
+             <article className="project-card" key={project.number}>
+              {project.image ? (
+  <img
+    className="project-image"
+    src={project.image}
+    alt={project.title}
+  />
+) : null}
+  <div className="project-card-top">
                   <span className="project-icon">{project.icon}</span>
                   <span className="project-number">{project.number}</span>
                 </div>
 
                 <p className="project-category">{project.category}</p>
                 <h3>{project.title}</h3>
+                
+  
                 <p className="project-description">{project.description}</p>
 
                 <div className="project-tech">
@@ -364,13 +384,45 @@ function App() {
                 </article>
               ))}
             </div>
+            </div>
+<section className="section" id="certificates">
+  <p className="eyebrow">MY ACHIEVEMENTS</p>
+  <h2>Certificates & Learning</h2>
 
-            <p className="credential-note">
-              Certificate links can be added when the original certificates
-              are available.
-            </p>
-          </div>
+  <p className="section-text">
+    A collection of my technical training, virtual internships,
+    and professional development achievements.
+  </p>
 
+  <div className="certificate-grid">
+    {internships.map((certificate) => (
+      <article className="certificate-card" key={certificate.title}>
+        <div className="certificate-image-wrap">
+          <img
+            src={certificate.image}
+            alt={certificate.title}
+            className="certificate-image"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="certificate-content">
+          <h3>{certificate.title}</h3>
+          <p>{certificate.organization}</p>
+
+          <a
+            href={certificate.image}
+            target="_blank"
+            rel="noreferrer"
+            className="certificate-link"
+          >
+            View Certificate ↗
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
           <div className="education-section" id="education">
             <div className="section-heading compact-heading">
               <div>
