@@ -48,6 +48,48 @@ const projects = [
   },
 ]
 
+const internships = [
+  {
+    title: 'AI-ML Virtual Internship',
+    organization: 'Amazon Web Services (AWS)',
+    skills: 'AWS SageMaker, S3, IAM',
+    icon: '☁️',
+  },
+  {
+    title: 'Cyber Security Virtual Internship',
+    organization: 'Palo Alto Networks',
+    skills: 'Network Security, Threat Detection',
+    icon: '🛡️',
+  },
+  {
+    title: 'Zero Trust Cloud Security Internship',
+    organization: 'Cloud Security',
+    skills: 'Zero Trust Architecture, Cloud Security',
+    icon: '🔐',
+  },
+  {
+    title: 'Employability Skill Job Ready',
+    organization: 'NSDC',
+    skills: 'Communication, Productivity, Collaboration',
+    icon: '🎯',
+  },
+]
+
+const education = [
+  {
+    degree: 'B.Tech — Computer Science and Engineering',
+    institution: 'Vignana Bharathi Institute of Technology',
+    period: '2021–2025',
+    result: 'CGPA: 7.5',
+  },
+  {
+    degree: 'Intermediate',
+    institution: 'Telangana Minority Junior College',
+    period: '2019–2021',
+    result: 'CGPA: 8.1',
+  },
+]
+
 
 function App() {
   return (
@@ -148,6 +190,48 @@ function App() {
             ))}
           </div>
         </section>
+        
+<section className="section" id="internships">
+  <p className="eyebrow">LEARNING & PROFESSIONAL DEVELOPMENT</p>
+  <h2>Internships & Certifications</h2>
+  <p className="section-text">
+    Virtual internship and job-readiness programs that helped me
+    develop my technical knowledge and professional skills.
+  </p>
+
+  <div className="internship-grid">
+    {internships.map((item) => (
+      <article className="internship-card" key={item.title}>
+        <div className="internship-icon">{item.icon}</div>
+        <h3>{item.title}</h3>
+        <p className="internship-org">{item.organization}</p>
+        <p className="internship-skills">{item.skills}</p>
+        <span className="credential-label">
+          Internship / Training
+        </span>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section className="section" id="education">
+  <p className="eyebrow">MY ACADEMIC BACKGROUND</p>
+  <h2>Education</h2>
+
+  <div className="education-list">
+    {education.map((item) => (
+      <article className="education-card" key={item.institution}>
+        <div className="education-top">
+          <h3>{item.degree}</h3>
+          <span className="education-period">{item.period}</span>
+        </div>
+        <p>{item.institution}</p>
+        <span className="education-result">{item.result}</span>
+      </article>
+    ))}
+  </div>
+</section>
+
 
         <section className="contact" id="contact">
           <p className="eyebrow">LET'S CONNECT</p>
