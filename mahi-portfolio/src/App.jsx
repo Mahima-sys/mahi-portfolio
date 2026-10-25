@@ -173,7 +173,7 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow">HELLO, I'M</p>
             <h1>
-              Mahi <span>Pothuraju</span>
+              Maheshwari <span >Pothuraju</span>
             </h1>
 
             <p className="hero-role">
